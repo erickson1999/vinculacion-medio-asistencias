@@ -14,3 +14,9 @@
     yarn start: Inicia el servidor de desarrollo. 
     yarn build: Genera la carpeta `build` con los archivos listos para subir a producción
     yarn serve: Inicia el servidor de prueba local para con los archivos de la carpeta `build`.
+
+## Tecnologías necesarias para su modificación
+    - TypeScript
+    - JavaScript
+    - Tailwindcss
+    - React
