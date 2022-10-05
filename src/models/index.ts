@@ -1,1 +1,2 @@
-export * from "./IFacultad"
+export * from "./ModelFacultad"
+export * from "./ModelsGet"

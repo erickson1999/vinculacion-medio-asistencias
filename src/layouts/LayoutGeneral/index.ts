@@ -1,1 +1,2 @@
-export * from "./LayoutGeneral"
+export * from './LayoutGeneral';
+export * from './LayoutGeneralInterface';

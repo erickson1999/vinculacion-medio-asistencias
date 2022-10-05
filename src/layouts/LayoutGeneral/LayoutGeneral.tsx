@@ -1,15 +1,29 @@
-import { FC, ReactNode } from 'react';
-import { GeneralLayoutNavbar } from './components/LayoutGeneralNavbar';
+import { FC } from 'react';
+import { LayoutGeneralI } from '.';
+import { LayoutGeneralFooter } from './components/LayoutGeneralFooter';
+import { LayoutGeneralNavbar } from './components/LayoutGeneralNavbar';
 
-interface IGeneralLayoutProps {
-	children: ReactNode;
-}
-export const GeneralLayout: FC<IGeneralLayoutProps> = ({ children }) => {
+export const LayoutGeneral: FC<LayoutGeneralI> = ({
+	children,
+	footerHeight = '',
+	footerWidth = '',
+	navbarHeight = '',
+	navbarWidth = '',
+	mainHeight = '',
+	mainWidth = '',
+
+}) => {
 	return (
-		<>
-			<GeneralLayoutNavbar></GeneralLayoutNavbar>
-			<main>{children}</main>
-			<footer>footer General Layout</footer>
-		</>
+		<main className={`${mainHeight} ${mainWidth}`}>
+			<LayoutGeneralNavbar
+				height={navbarHeight}
+				width={navbarWidth}
+			></LayoutGeneralNavbar>
+			{children}
+			<LayoutGeneralFooter
+				height={footerHeight}
+				width={footerWidth}
+			></LayoutGeneralFooter>
+		</main>
 	);
 };

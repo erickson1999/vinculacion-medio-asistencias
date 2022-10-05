@@ -1,1 +1,2 @@
-export * from "./LayoutGeneralNavbar"
+export * from './LayoutGeneralNavbar';
+export * from './LayoutGeneralNavbarInterface';
