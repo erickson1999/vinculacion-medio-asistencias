@@ -7,7 +7,9 @@ interface FormLoginI {
 	email: string;
 	password: string;
 }
+
 const initialValues: FormLoginI = { email: '', password: '' };
+
 const validate = (values: FormLoginI) => {
 	const errors: any = {};
 	if (!values.email) {
@@ -19,18 +21,23 @@ const validate = (values: FormLoginI) => {
 	}
 	return errors;
 };
+
 const onSubmit = (values: FormLoginI) => {
-	console.log('send form');
+	console.log('send form', values);
 };
 export const PageLogin = () => {
 	return (
 		<LayoutGeneral
 			mainHeight="h-screen"
-			footerHeight="h-1/6"
-			navbarHeight="h-1/6"
+			footerHeight="h-1/12"
+			navbarHeight="h-1/12"
 		>
-			<div className="h-4/6 flex justify-center items-center">
-				<div className="p-10 rounded-xl shadow-xl max-w-sm flex flex-col items-center gap-y-6">
+			<div className="h-10/12 flex justify-center items-center">
+				{/* card login */}
+				<div className="p-10 rounded-3xl shadow-xl max-w-sm flex flex-col items-center gap-y-6 border">
+					
+					<img src="/logo-upeu.svg" alt="logo-upeu" />
+					
 					<h1 className="font-black text-3xl italic">INICIAR SESIÓN</h1>
 					<Formik
 						initialValues={initialValues}
@@ -74,9 +81,7 @@ export const PageLogin = () => {
 						)}
 					</Formik>
 					<Link to={'/recovery-account'}>
-						<p className="underline text-primary text-md">
-							¿Olvidaste tu contraseña?
-						</p>
+						<p className=" text-primary text-md">¿Olvidaste tu contraseña?</p>
 					</Link>
 				</div>
 			</div>

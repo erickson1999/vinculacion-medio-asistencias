@@ -6,8 +6,10 @@ export const LayoutGeneralFooter: FC<LayoutGeneralFooterI> = ({
 	width,
 }) => {
 	return (
-		<footer className={`${width} ${height} flex justify-center items-center`}>
-			GeneralLayoutFooter
+		<footer
+			className={`${width} ${height} flex justify-center items-center bg-secondary`}
+		>
+			<p>Todos los derechos reservados</p>
 		</footer>
 	);
 };

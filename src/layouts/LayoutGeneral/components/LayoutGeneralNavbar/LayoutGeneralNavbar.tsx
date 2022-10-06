@@ -5,5 +5,5 @@ export const LayoutGeneralNavbar: FC<LayoutGeneralNavbarI> = ({
 	width,
 	height,
 }) => {
-	return <nav className={`${width} ${height}`}>GeneralLayoutNavbar</nav>;
+	return <nav className={`${width} ${height} bg-primary shadow-xl`}>Navbar</nav>;
 };
