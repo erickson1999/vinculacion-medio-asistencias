@@ -10,12 +10,14 @@ export const Button: FC<ButtonI> = ({
 	colorText,
 	type = 'submit',
 	disabled,
+	onClick,
 }) => {
 	return (
 		<button
 			type={type}
 			disabled={disabled}
 			className={`${background} ${padding} ${rounded}  ${colorText} ${className}`}
+			onClick={onClick}
 		>
 			{text}
 		</button>

@@ -1,3 +1,5 @@
+import { MouseEventHandler } from 'react';
+
 export interface ButtonI {
 	type?: 'submit' | 'button' | 'reset';
 	disabled?: boolean;
@@ -7,4 +9,5 @@ export interface ButtonI {
 	rounded: string;
 	colorText: string;
 	className?: string;
+	onClick?: MouseEventHandler<HTMLButtonElement>;
 }

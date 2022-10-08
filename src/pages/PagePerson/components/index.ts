@@ -1,1 +1,1 @@
-export * from './PagePersonNew';
+export * from './PagePersonForm';

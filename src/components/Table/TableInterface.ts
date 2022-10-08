@@ -1,10 +1,11 @@
-export interface TablePersonsI {
-	users: UsersI[];
+export interface TableI {
+	data: Object[];
 	heads: string[];
-	options?: TablePersonsOptionsI;
+	configs?: TableConfigsI;
+	options: TableOptionsI;
 }
 
-export interface UsersI {
+export interface UserI {
 	dni: number | string;
 	codigo: number | string;
 	nombreCompleto: string;
@@ -13,7 +14,12 @@ export interface UsersI {
 	correo: string;
 }
 
-export interface TablePersonsOptionsI {
+export interface TableConfigsI {
 	numeration: boolean;
-	align?: 'left' | 'center' | 'right';
+	align?: 'text-left' | 'text-center' | 'text-right';
+	maxWidth?: 'sm' | 'md' | 'lg' | 'xl' | '2xl';
+}
+export interface TableOptionsI {
+	enabled: boolean;
+	actions: (item: any) => JSX.Element;
 }

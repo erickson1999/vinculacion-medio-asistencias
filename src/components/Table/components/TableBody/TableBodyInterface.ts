@@ -1,6 +1,11 @@
-import { TablePersonsOptionsI } from '../../TableInterface';
+import { TableConfigsI } from '../../TableInterface';
 
 export interface TableBodyI {
 	data: Object[];
-	options: TablePersonsOptionsI;
+	configs: TableConfigsI;
+	options: TableBodyOptionsI;
+}
+export interface TableBodyOptionsI {
+	enabled: boolean;
+	actions: (item: any) => JSX.Element;
 }

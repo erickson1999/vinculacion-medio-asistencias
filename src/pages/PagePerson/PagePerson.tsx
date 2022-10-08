@@ -1,9 +1,125 @@
-import { SetStateAction, useState } from 'react';
+import { useContext, useState } from 'react';
+import { AiOutlineDelete, AiOutlineEdit } from 'react-icons/ai';
+import { Button, Modal } from '../../components';
 import { Table } from '../../components/Table';
-import { UsersI } from '../../components/Table/TableInterface';
-import { PagePersonNewModal } from './components';
+import { UserI } from '../../components/Table/TableInterface';
+import { ContextUI } from '../../context/ContextUI';
+import { LayoutGeneral } from '../../layouts';
+import { PagePersonForm } from './components';
 
-const usersFake: UsersI[] = [
+const usersFake: UserI[] = [
+	{
+		dni: 70521769,
+		nombreCompleto: 'Erickson Raul Quispe Churata',
+		ciclo: '7',
+		grupo: 'Único',
+		codigo: '201712135',
+		correo: 'ericksonraulquispechurata@gmail.com',
+	},
+	{
+		dni: 70707070,
+		nombreCompleto: 'Dulce Marian Quispe Churata',
+		ciclo: '7',
+		grupo: 'Único',
+		codigo: '347190845',
+		correo: 'ericksonraulquispechurata@gmail.com',
+	},
+	{
+		dni: 41345550,
+		nombreCompleto: 'Marleny Churata Vizarrita',
+		ciclo: '7',
+		grupo: 'Único',
+		codigo: '432457379',
+		correo: 'ericksonraulquispechurata@gmail.com',
+	},
+	{
+		dni: 40105720,
+		nombreCompleto: 'Raymundo Raul Quispe Supa',
+		ciclo: '7',
+		grupo: 'Único',
+		codigo: '238904567',
+		correo: 'ericksonraulquispechurata@gmail.com',
+	},
+	{
+		dni: 70521769,
+		nombreCompleto: 'Erickson Raul Quispe Churata',
+		ciclo: '7',
+		grupo: 'Único',
+		codigo: '201712135',
+		correo: 'ericksonraulquispechurata@gmail.com',
+	},
+	{
+		dni: 70521769,
+		nombreCompleto: 'Erickson Raul Quispe Churata',
+		ciclo: '7',
+		grupo: 'Único',
+		codigo: '201712135',
+		correo: 'ericksonraulquispechurata@gmail.com',
+	},
+	{
+		dni: 70521769,
+		nombreCompleto: 'Erickson Raul Quispe Churata',
+		ciclo: '7',
+		grupo: 'Único',
+		codigo: '201712135',
+		correo: 'ericksonraulquispechurata@gmail.com',
+	},
+	{
+		dni: 70521769,
+		nombreCompleto: 'Erickson Raul Quispe Churata',
+		ciclo: '7',
+		grupo: 'Único',
+		codigo: '201712135',
+		correo: 'ericksonraulquispechurata@gmail.com',
+	},
+	{
+		dni: 70521769,
+		nombreCompleto: 'Erickson Raul Quispe Churata',
+		ciclo: '7',
+		grupo: 'Único',
+		codigo: '201712135',
+		correo: 'ericksonraulquispechurata@gmail.com',
+	},
+	{
+		dni: 70521769,
+		nombreCompleto: 'Erickson Raul Quispe Churata',
+		ciclo: '7',
+		grupo: 'Único',
+		codigo: '201712135',
+		correo: 'ericksonraulquispechurata@gmail.com',
+	},
+	{
+		dni: 70521769,
+		nombreCompleto: 'Erickson Raul Quispe Churata',
+		ciclo: '7',
+		grupo: 'Único',
+		codigo: '201712135',
+		correo: 'ericksonraulquispechurata@gmail.com',
+	},
+	{
+		dni: 70521769,
+		nombreCompleto: 'Erickson Raul Quispe Churata',
+		ciclo: '7',
+		grupo: 'Único',
+		codigo: '201712135',
+		correo: 'ericksonraulquispechurata@gmail.com',
+	},
+	{
+		dni: 70521769,
+		nombreCompleto: 'Erickson Raul Quispe Churata',
+		ciclo: '7',
+		grupo: 'Único',
+		codigo: '201712135',
+		correo: 'ericksonraulquispechurata@gmail.com',
+	},
+	{
+		dni: 70521769,
+		nombreCompleto: 'Erickson Raul Quispe Churata',
+		ciclo: '7',
+		grupo: 'Único',
+		codigo: '201712135',
+		correo: 'ericksonraulquispechurata@gmail.com',
+	},
 	{
 		dni: 70521769,
 		nombreCompleto: 'Erickson Raul Quispe Churata',
@@ -57,24 +173,66 @@ const usersFake: UsersI[] = [
 const heads = ['DNI', 'Nombres completo', 'Ciclo', 'Grupo', 'Codigo', 'Correo'];
 
 export const PagePerson = () => {
-	const [isOpenModal, setIsOpenModal] = useState(false);
+	const {
+		modal: { setIsOpenModal, setContentModal },
+	} = useContext(ContextUI);
 
 	return (
-		<div>
-			<PagePersonNewModal
-				isOpenModal={isOpenModal}
-				setIsOpenModal={setIsOpenModal}
-			></PagePersonNewModal>
-			<Table
-				users={usersFake}
-				heads={heads}
-				options={{ numeration: true, align: 'center' }}
-			></Table>
-			<button
-				onClick={() => {
-					setIsOpenModal(!isOpenModal);
-				}}
-			>clickeamee</button>
-		</div>
+		<LayoutGeneral
+			footerHeight="h-1/12"
+			navbarHeight="h-1/12"
+			mainHeight="h-screen"
+		>
+			<div className="h-10/12">
+				<div className="flex flex-col items-center justify-center h-full">
+					<Button
+						background={'bg-primary'}
+						text={'Nueva persona +'}
+						padding={'px-4 py-2'}
+						rounded={'rounded-full'}
+						colorText={'text-white'}
+						className={
+							'font-bold my-1 border hover:border-primary hover:bg-white transition-all hover:text-primary ease-in'
+						}
+						onClick={() => {
+							setContentModal(<PagePersonForm></PagePersonForm>);
+							setIsOpenModal(true);
+						}}
+					></Button>
+					<Table
+						data={usersFake}
+						heads={heads}
+						configs={{ numeration: true, align: 'text-center' }}
+						options={{
+							enabled: true,
+							actions: (item: UserI) => {
+								return (
+									<>
+										<AiOutlineEdit
+											className="text-orange-500 cursor-pointer"
+											onClick={() => {
+												setContentModal(
+													<PagePersonForm personData={item}></PagePersonForm>
+												);
+												setIsOpenModal(true);
+											}}
+										></AiOutlineEdit>
+										,
+										<AiOutlineDelete
+											className="text-red-500 cursor-pointer"
+											onClick={() => {
+												setContentModal(<h1 />);
+												setIsOpenModal(true);
+											}}
+										></AiOutlineDelete>
+										,
+									</>
+								);
+							},
+						}}
+					></Table>
+				</div>
+			</div>
+		</LayoutGeneral>
 	);
 };

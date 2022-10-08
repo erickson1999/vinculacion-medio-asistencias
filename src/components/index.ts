@@ -3,3 +3,6 @@ export * from './Modal';
 export * from './SubTitle';
 export * from './Title';
 export * from './Form';
+export * from './Sidebar';
+export * from './Table';
+export * from '../context/ContextUI/components/ContextUIModal';
