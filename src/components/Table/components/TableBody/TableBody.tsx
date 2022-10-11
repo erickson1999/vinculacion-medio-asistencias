@@ -1,6 +1,8 @@
 import { FC, useContext } from 'react';
+
+import { v4 as uuid } from 'uuid';
+
 import { TableBodyI } from './';
-import { AiOutlineDelete, AiOutlineEdit } from 'react-icons/ai';
 import { ContextUI } from '../../../../context/ContextUI';
 import { Button } from '../../../Button';
 export const TableBody: FC<TableBodyI> = ({ data, configs, options }) => {
@@ -44,13 +46,13 @@ export const TableBody: FC<TableBodyI> = ({ data, configs, options }) => {
 		<tbody>
 			{data.map((obj, index) => {
 				return (
-					<tr className="hover:bg-secondary hover:bg-opacity-50" key={index}>
+					<tr className="hover:bg-secondary hover:bg-opacity-50" key={uuid()}>
 						{configs.numeration && (
 							<td className="p-2 border whitespace-nowrap">{index + 1}</td>
 						)}
-						{Object.values(obj).map((val, index) => {
+						{Object.values(obj).map((val) => {
 							return (
-								<td className="border p-1 whitespace-nowrap" key={index}>
+								<td className="border p-1 whitespace-nowrap" key={uuid()}>
 									{val}
 								</td>
 							);

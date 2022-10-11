@@ -217,7 +217,6 @@ export const PagePerson = () => {
 												setIsOpenModal(true);
 											}}
 										></AiOutlineEdit>
-										,
 										<AiOutlineDelete
 											className="text-red-500 cursor-pointer"
 											onClick={() => {
@@ -225,7 +224,6 @@ export const PagePerson = () => {
 												setIsOpenModal(true);
 											}}
 										></AiOutlineDelete>
-										,
 									</>
 								);
 							},

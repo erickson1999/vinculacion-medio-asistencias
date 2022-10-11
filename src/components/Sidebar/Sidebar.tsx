@@ -1,8 +1,10 @@
 import { FC } from 'react';
+
+import { v4 as uuid } from 'uuid';
+
 import { Button } from '../Button';
 import { SidebarI } from './SidebarInterface';
 import { Link } from 'react-router-dom';
-
 export const Sidebar: FC<SidebarI> = ({
 	isOpenSidebar,
 	setIsOpenSidebar,
@@ -33,7 +35,7 @@ export const Sidebar: FC<SidebarI> = ({
 				<ul className="flex flex-col gap-y-2 ">
 					{items.map((item) => {
 						return (
-							<Link to={item.url}>
+							<Link to={item.url} key={uuid()}>
 								<li
 									onClick={() => {
 										setIsOpenSidebar(false);
