@@ -1,7 +1,7 @@
 import { RouteObject } from 'react-router-dom';
-import { Home } from '../../pages/PageHome';
+import { PageHome } from '../../pages/PageHome';
 
 export const RouterHome: RouteObject = {
 	path: '/',
-	element: <Home />,
+	element: <PageHome />,
 };

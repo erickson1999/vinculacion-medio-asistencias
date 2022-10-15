@@ -1,5 +1,4 @@
-import { createBrowserRouter, RouterProvider, Route } from 'react-router-dom';
-
+//Angel
 export const Profile = () => {
-	return <h1>Profile 1</h1>;
+	return <h1>Page Profile</h1>;
 };

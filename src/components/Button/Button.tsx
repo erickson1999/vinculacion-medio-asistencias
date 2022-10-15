@@ -16,7 +16,7 @@ export const Button: FC<ButtonI> = ({
 		<button
 			type={type}
 			disabled={disabled}
-			className={`${background} ${padding} ${rounded}  ${colorText} ${className}`}
+			className={`${background} ${padding} ${rounded} ${colorText} ${className}`}
 			onClick={onClick}
 		>
 			{text}

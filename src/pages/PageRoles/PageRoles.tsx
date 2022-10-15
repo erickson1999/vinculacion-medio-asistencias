@@ -3,7 +3,7 @@ import { Modal, Table } from '../../components';
 import { LayoutGeneral } from '../../layouts';
 
 const rolFake = [{ name: 'Admin' }];
-export const PageRol: FC = () => {
+export const PageRoles: FC = () => {
 	const [isOpenModal, setIsOpenModal] = useState(false);
 	const [contentModal, setContentModal] = useState(<h1>Modal</h1>);
 

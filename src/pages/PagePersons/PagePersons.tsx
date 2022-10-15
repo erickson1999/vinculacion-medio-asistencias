@@ -1,11 +1,13 @@
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { AiOutlineDelete, AiOutlineEdit } from 'react-icons/ai';
-import { Button, Modal } from '../../components';
+import { Button } from '../../components';
 import { Table } from '../../components/Table';
 import { UserI } from '../../components/Table/TableInterface';
 import { ContextUI } from '../../context/ContextUI';
 import { LayoutGeneral } from '../../layouts';
-import { PagePersonForm } from './components';
+import { PagePersonsForm } from './components';
+
+
 
 const usersFake: UserI[] = [
 	{
@@ -172,7 +174,7 @@ const usersFake: UserI[] = [
 
 const heads = ['DNI', 'Nombres completo', 'Ciclo', 'Grupo', 'Codigo', 'Correo'];
 
-export const PagePerson = () => {
+export const PagePersons = () => {
 	const {
 		modal: { setIsOpenModal, setContentModal },
 	} = useContext(ContextUI);
@@ -195,7 +197,7 @@ export const PagePerson = () => {
 							'font-bold my-1 border hover:border-primary hover:bg-white transition-all hover:text-primary ease-in'
 						}
 						onClick={() => {
-							setContentModal(<PagePersonForm></PagePersonForm>);
+							setContentModal(<PagePersonsForm />);
 							setIsOpenModal(true);
 						}}
 					></Button>
@@ -212,7 +214,7 @@ export const PagePerson = () => {
 											className="text-orange-500 cursor-pointer"
 											onClick={() => {
 												setContentModal(
-													<PagePersonForm personData={item}></PagePersonForm>
+													<PagePersonsForm personData={item} />
 												);
 												setIsOpenModal(true);
 											}}

@@ -1,5 +1,7 @@
+import { RouteObject } from "react-router-dom";
+import { PageFaculties } from "../../pages/PageFaculties";
 
-export const RouterFaculties = {
+export const RouterFaculties: RouteObject = {
 	path: '/faculties',
-	element: <h1>RouterFaculties</h1>,
+	element: <PageFaculties />,
 };

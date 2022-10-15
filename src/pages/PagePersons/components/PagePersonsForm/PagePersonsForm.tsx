@@ -18,8 +18,10 @@ export interface PagePersonFormI {
 	personData?: UserI;
 }
 
-const onSubmit = () => {};
-export const PagePersonForm: FC<PagePersonFormI> = ({ personData }) => {
+
+const onSubmit = () => {}
+
+export const PagePersonsForm: FC<PagePersonFormI> = ({ personData }) => {
 	const {
 		modal: { setIsOpenModal },
 	} = useContext(ContextUI);

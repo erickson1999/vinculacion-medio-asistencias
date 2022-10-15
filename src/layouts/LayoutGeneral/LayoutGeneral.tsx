@@ -1,4 +1,4 @@
-import { FC, SetStateAction, useState } from 'react';
+import { FC, useState } from 'react';
 import { LayoutGeneralI } from '.';
 import { Sidebar, SidebarItemI } from '../../components';
 import { LayoutGeneralFooter } from './components/LayoutGeneralFooter';
@@ -8,19 +8,19 @@ import { LayoutGeneralNavbar } from './components/LayoutGeneralNavbar';
 const itemsFake: SidebarItemI[] = [
 	{
 		name: 'Rol',
-		url: '/rol',
+		url: '/roles',
 	},
 	{
-		name: 'Usuario',
-		url: '/user',
+		name: 'Usuarios',
+		url: '/users',
 	},
 	{
 		name: 'Periodo',
-		url: '/period',
+		url: '/periods',
 	},
 	{
 		name: 'Personas',
-		url: '/person',
+		url: '/persons',
 	},
 	{
 		name: 'Eventos',
