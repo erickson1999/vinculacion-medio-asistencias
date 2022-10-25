@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { AiOutlineDelete, AiOutlineEdit } from 'react-icons/ai';
-import { Button } from '../../components';
+import { Button, ModalForRemove, SubTitle } from '../../components';
 import { Table } from '../../components/Table';
 import { UserI } from '../../components/Table/TableInterface';
 import { ContextUI } from '../../context/ContextUI';
@@ -222,7 +222,11 @@ export const PagePersons = () => {
 										<AiOutlineDelete
 											className="text-red-500 cursor-pointer"
 											onClick={() => {
-												setContentModal(<h1 />);
+												setContentModal(
+													<ModalForRemove deleteItem={() => { setIsOpenModal(false) }} >
+														<SubTitle className='font-semibold text-black'>{`Eliminar a: "${item.nombreCompleto.toUpperCase()}"`}</SubTitle>
+													</ModalForRemove>
+												);
 												setIsOpenModal(true);
 											}}
 										></AiOutlineDelete>

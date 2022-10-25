@@ -7,8 +7,8 @@ export const ContextUIModal: FC<ContextUIModalI> = ({
 	className = '',
 	bgColor = 'bg-primary',
 	bgModalColor = 'bg-white',
-	btnCloseStyle = 'bg-primary py-1 px-3 rounded-full text-xl text-secondary font-bold',
-	paddingModal = 'p-12',
+	btnCloseStyle = 'bg-primary  py-1 px-3 rounded-full text-lg text-secondary font-bold',
+	paddingModal = 'p-8',
 	opacity = 'bg-opacity-20 ',
 }) => {
 	const {

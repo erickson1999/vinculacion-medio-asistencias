@@ -5,4 +5,4 @@ export * from './Title';
 export * from './Form';
 export * from './Sidebar';
 export * from './Table';
-export * from '../context/ContextUI/components/ContextUIModal';
+export * from './ModalForRemove';

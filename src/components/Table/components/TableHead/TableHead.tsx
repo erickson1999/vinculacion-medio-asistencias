@@ -14,7 +14,7 @@ export const TableHead: FC<TableHeadI> = ({ heads, configs, options }) => {
 						{head}
 					</th>
 				))}
-				{options && <th className="p-2 border">Opciones</th>}
+				{options.enabled && <th className="p-2 border">Opciones</th>}
 			</tr>
 		</thead>
 	);

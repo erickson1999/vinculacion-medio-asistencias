@@ -9,7 +9,7 @@ export const Modal: FC<ModalI> = ({
 	bgColor = 'bg-primary',
 	bgModalColor = 'bg-white',
 	btnCloseStyle = 'bg-primary py-1 px-3 rounded-full text-xl text-secondary font-bold',
-	paddingModal = 'p-12',
+	paddingModal = 'p-4',
 	opacity = 'bg-opacity-20 ',
 }) => {
 	return isOpen ? (
